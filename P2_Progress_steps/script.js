@@ -6,19 +6,17 @@ let cptActive = 1;
 
 document.addEventListener('DOMContentLoaded', function () {
     btnNext.addEventListener('click', () => {
-        cptActive++;
-
-        if (cptActive <= circle.length) {
-            updateCircleClasses()
+        if (cptActive < circle.length) {
+            cptActive++;
+            updateCircleClasses();
         } else {
             console.log('Quota atteint');
         }
     });
 
     btnPrev.addEventListener('click', () => {
-        cptActive--;
-
-        if (cptActive >= 1) {
+        if (cptActive > 1) {
+            cptActive--;
             updateCircleClasses();
         } else {
             console.log('Déjà au début');
@@ -26,14 +24,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function updateCircleClasses() {
-        const actives = document.querySelectorAll('.active')
-            circle.forEach((item, index)=>{
-                item.classList.toggle('active', index < cptActive);
+        circle.forEach((item, index) => {
+            item.classList.toggle('active', index < cptActive);
+        });
 
-            });
-            progress.style.width = (actives.length - 1) / (circle.length - 1) * 100 + '%'
-            btnPrev.disabled = cptActive === 1;
-            btnNext.disabled = cptActive === circle.length;
+        const progressWidth = (cptActive - 1) /3 * 100 + '%';
+        progress.style.width = progressWidth;
+
+        btnPrev.disabled = cptActive === 1;
+        btnNext.disabled = cptActive === circle.length;
     }
-
 });

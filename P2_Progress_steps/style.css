@@ -12,6 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-color: black;
 }
 .container{
     text-align: center;
@@ -26,7 +27,7 @@ body{
 }
 .progress-container::before {
     content: '';
-    background-color: #383838;
+    background-color: white;
     position: absolute;
     top: 50%;
     left: 0;
@@ -36,7 +37,7 @@ body{
     z-index: -1;
   }
   .progress {
-    background-color: #3498db;
+    background-color: orangered;
     position: absolute;
     top: 50%;
     left: 0;
@@ -47,19 +48,19 @@ body{
     transition: 0.4s ease;
   }
 .circle{
-    background-color: #fff;
+    background-color: antiquewhite;
     color:#c90808;
     height: 30px;
     width: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #383838;
+    border: 2px solid white;
     border-radius: 50%;
     transition: 0.4s ease;
 }
 .circle.active {
-    border-color: #3498db;
+    border-color: orangered;
   }
   
   .btn {
