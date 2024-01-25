@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    color: white;
+    width: 400px;
+    height: 200px;
+    margin: 15px auto;
+    padding: 1.2rem;
+    border-radius: 15px;
+    transition: transform 0.8s ease;
+    transition: opacity 1s, transform 0.8s;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    transform: translateX(400%);
+    opacity: 0;
+  }
+  h1 {
+    margin: 10px;
+  }
+  .box:nth-child(odd){
+    transform: translateX(-400%);
+  }
+  .box.onshow{
+    opacity: 1;
+    transform: translateX(0);
+  }
